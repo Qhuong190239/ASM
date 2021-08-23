@@ -14,8 +14,8 @@ app.get('/edit',async(req, res) => {
 })
 
 app.post('/update', async (req, res) => {
-    const nameInput = req.body.txtName;
-    const tuoiInput = req.body.txtTuoi;
+    const nameInput    = req.body.txtName;
+    const tuoiInput    = req.body.txtTuoi;
     const id = req.body.txtId;
 
     updateStudent(id, nameInput, tuoiInput);
@@ -25,7 +25,8 @@ app.post('/update', async (req, res) => {
 app.post('/insert', async (req, res) => {
     const nameInput = req.body.txtName;
     const tuoiInput = req.body.txtTuoi;
-    const newStudent = {name:nameInput, tuoi:tuoiInput}
+    const pictureInput = req.body.txtPicture;
+    const newStudent = {name:nameInput, tuoi:tuoiInput, picture:pictureInput}
 
     insertStudent(newStudent);
     res.redirect("/")
